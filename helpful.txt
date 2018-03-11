@@ -1,0 +1,6 @@
+ngrok http 5000
+http://127.0.0.1:5000/
+https://developers.facebook.com/apps/969095549905591/messenger/settings/
+
+https://www.twilio.com/blog/2017/12/facebook-messenger-bot-python.html
+EAANxYyQBarcBABLh1geBBUwlZCT4NDqZCfApMz4XEhLqqRLZAr7qF9qCQjp9abvuQZBnWecPeCKRGmpMztn1sa0wh3EuTLK2fsYNGpdlEAjlrR2p86fJPn4U9aYc4sJeyycmTvlwLp00dJMPFeR036hXlms5yGFSXBsDLbEvtgZDZD
