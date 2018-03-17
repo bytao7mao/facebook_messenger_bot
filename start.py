@@ -3,7 +3,7 @@ import random
 from flask import Flask, request
 from pymessenger.bot import Bot
 
-token = "EAANxYyQBarcBABLh1geBBUwlZCT4NDqZCfApMz4XEhLqqRLZAr7qF9qCQjp9abvuQZBnWecPeCKRGmpMztn1sa0wh3EuTLK2fsYNGpdlEAjlrR2p86fJPn4U9aYc4sJeyycmTvlwLp00dJMPFeR036hXlms5yGFSXBsDLbEvtgZDZD"
+token = "EAANxYyQBarcBAFYe4kHxUDIWMmf1gmRhjIcIMXO4bbjwbPdqpFc2ZBxV9hLVyDpCvx76TtKgVcJuMyMKtGGKJXFhp0fqEoIj8xXMWZBzu9ZBcjDuheujQMlycaL1pdQptcZBO0TMV0ZBXsCdZBeKuigUTjFsgOMbF1oepBU0jFrQZDZD"
 
 app = Flask(__name__)
 ACCESS_TOKEN = token
@@ -28,6 +28,9 @@ def receive_message():
             if message.get('message'):
                 #Facebook Messenger ID for user so we know where to send response back to
                 recipient_id = message['sender']['id']
+                if message['message'].get('text') == 'hi':
+                    response_sent_text = "Oh you said hi ... WOW you're the one !"
+                    send_message(recipient_id, response_sent_text)
                 if message['message'].get('text'):
                     response_sent_text = get_message()
                     send_message(recipient_id, response_sent_text)
