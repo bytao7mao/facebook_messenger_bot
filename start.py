@@ -31,9 +31,21 @@ def receive_message():
                 if message['message'].get('text') == 'hi':
                     response_sent_text = "Oh you said hi ... WOW you're the one !"
                     send_message(recipient_id, response_sent_text)
-                if message['message'].get('text'):
-                    response_sent_text = get_message()
+                elif message['message'].get('text') == 'bye':
+                    response_sent_text = bye_message()
                     send_message(recipient_id, response_sent_text)
+                elif message['message'].get('text') == 'info':
+                    response_sent_text = bye_message()
+                    send_message(recipient_id, response_sent_text)
+                elif message['message'].get('text') == 'help':
+                    response_sent_text = bye_message()
+                    send_message(recipient_id, response_sent_text)
+                    
+#                           default message 
+#                 if message['message'].get('text'):
+#                     response_sent_text = get_message()
+#                     send_message(recipient_id, response_sent_text)
+
                 #if user sends us a GIF, photo,video, or any other non-text item
                 if message['message'].get('attachments'):
                     response_sent_nontext = get_message()
@@ -51,6 +63,15 @@ def get_message():
     sample_responses = ["You are stunning!", "We're proud of you.", "Keep on being you!", "We're greatful to know you :)"]
     # return selected item to the user
     return random.choice(sample_responses)
+def bye_message():
+    bye_responses = ["See ya till next time", "See ya, just type something if you want help!", "Cheers !"]
+    return random.choice(bye_responses)
+def info_message():
+    bye_responses = ["Type a word and i'll see if i can help you ! with info", "I'll search now for your request info", "info info info"]
+    return random.choice(bye_responses)
+def help_message():
+    bye_responses = ["How can i help you ?", "Type a word and i'll see if i can help you !", " Glad you asked for help "]
+    return random.choice(bye_responses)
 
 def send_message(recipient_id, response):
     bot.send_text_message(recipient_id, response)
